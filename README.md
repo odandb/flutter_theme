@@ -49,7 +49,7 @@ import 'package:your_name_app_folder/theme/colors.dart';
 import 'package:your_name_app_folder/theme/style.dart';
 import 'package:your_name_app_folder/theme/others.dart';
 
-class CustomTheme {
+class CustomTheme() {
   static final CustomTheme _singleton = CustomTheme._internal();
 
   factory CustomTheme {
@@ -77,7 +77,7 @@ import 'package:your_name_app_folder/theme/colors.dart';
 
 final ThemeData customThemeData = ThemeData(
   brightness: Brightness.light,
-  primaryColor: CustomColors().blue,
+  primaryColor: CustomColors().white,
   primaryTextTheme: TextTheme(
     title: TextStyle(color: Colors.white),
   ),
@@ -96,7 +96,7 @@ final ThemeData customThemeDataDark = ThemeData(
 import 'package:flutter/material.dart';
 
 class CustomColors {
-  static const MaterialColor white = new MaterialColor(
+  final MaterialColor white = const MaterialColor(
     0xFF252850,
     const <int, Color>{
       10: const Color(0x19ffffff),
@@ -112,8 +112,8 @@ class CustomColors {
     }
   );
   
-  const Color info = const Color(0xff4a90e2);
-  const Color danger = const Color(0xffea2322);
+  final Color info = const Color(0xff4a90e2);
+  final Color danger = const Color(0xffea2322);
 }
 ```
 
@@ -141,14 +141,14 @@ class CustomTextStyle {
 
   TextStyle titleAppBar(BuildContext context) {
     return TextStyle(
-      fontSize: AppSize(context).isTablet()
+      fontSize: DeviceSize(context).isTablet()
           ? extraLargeTextSizeTablet
           : extraLargeTextSizePhone,
       fontWeight: FontWeight.bold,
       color: Colors.white,
       fontFamily: 'Mansalva',
     );
-  };
+  }
 
   TextStyle Dark_H2 = const TextStyle(
     fontFamily: 'SFProDisplay',
