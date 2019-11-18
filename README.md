@@ -150,7 +150,7 @@ class CustomTextStyle {
     );
   }
 
-  TextStyle Dark_H2 = const TextStyle(
+  TextStyle Dark_H2 = TextStyle(
     fontFamily: 'SFProDisplay',
     color: Color(0xffffffff),
     fontSize: 60,
